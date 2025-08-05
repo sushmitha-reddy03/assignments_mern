@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Dasari Sushmitha | Portfolio</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+      :root {
+        --primary-color: #a855f7;
+        --primary-color-dark: #9333ea;
+        --secondary-color: #ca8a04;
+        --text-dark: #1f2937;
+        --text-light: #6b7280;
+        --extra-light: #fdf9ff;
+        --max-width: 1200px;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      html, body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--extra-light);
+        color: var(--text-dark);
+        scroll-behavior: smooth;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      nav {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #ffffff;
+        z-index: 99;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+
+      .nav__content {
+        max-width: var(--max-width);
+        margin: auto;
+        padding: 1.5rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      nav .logo a {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #000000;
+        transition: 0.3s;
+      }
+
+      nav .logo a:hover {
+        color: var(--primary-color-dark);
+      }
+
+      nav .checkbox {
+        display: none;
+      }
+
+      nav input {
+        display: none;
+      }
+
+      nav .checkbox i {
+        font-size: 2rem;
+        color: var(--primary-color);
+        cursor: pointer;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+        transition: left 0.3s;
+      }
+
+      ul li a {
+        padding: 0.5rem 1rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        transition: 0.3s;
+      }
+
+      ul li a:hover {
+        color: var(--secondary-color);
+        border-bottom: 2px solid var(--secondary-color);
+      }
+
+      section {
+        width: 100vw;
+        min-height: 100vh;
+        padding: 100px 80px 60px;
+        box-sizing: border-box;
+      }
+
+      .portfolio-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        background: url("b2.jpg") no-repeat center center/cover;
+        position: relative;
+        gap: 40px;
+      }
+
+      .left-section {
+        max-width: 50%;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .left-section h4 {
+        color: var(--secondary-color);
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .left-section h1 {
+        font-size: 40px;
+        color: var(--text-dark);
+        line-height: 1.4;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .left-section h1 span {
+        display: block;
+      }
+
+      .left-section p {
+        color: var(--text-light);
+        font-size: 16px;
+        max-width: 500px;
+      }
+
+      .right-section {
+        position: relative;
+      }
+
+      .right-section img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid var(--primary-color);
+        z-index: 2;
+      }
+
+      .lines {
+        position: absolute;
+        bottom: -40px;
+        left: -30px;
+        width: 120px;
+        height: 3px;
+        background: linear-gradient(to right, #ffc107 20%, transparent 0%) repeat-x;
+        background-size: 40px 3px;
+      }
+
+      .scroll-section {
+        background-color: var(--extra-light);
+        color: var(--text-dark);
+        padding-top: 100px;
+        text-align: left;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+
+      .scroll-section h2 {
+        font-size: 32px;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .about-container {
+        display: flex;
+        align-items: center;
+        background: url("background1.jpg") no-repeat center center/cover;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .about-text {
+        flex: 1;
+        font-size: 18px;
+        line-height: 1.6;
+        color: var(--text-light);
+      }
+
+      .about-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .about-image img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 50%;
+        border:none;
+        margin-left: -230px;
+      }
+.scroll-section#skills {
+  background: url('picture.jpg') no-repeat center center/cover;
+}
+     .skills {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .skill-box {
+        background-color: #ffffff;
+        color: var(--text-dark);
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        font-weight: bold;
+        transition: transform 0.3s;
+      }
+
+      .skill-box:hover {
+        transform: translateY(-5px);
+      }
+
+      .contact {
+        background-color: var(--extra-light);
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      .contact h2 {
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+
+      .contact p {
+        color: var(--text-light);
+        font-size: 1rem;
+        margin: 0.5rem 0;
+      }
+
+      .contact a {
+        color: var(--primary-color);
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .contact a:hover {
+        color: var(--primary-color-dark);
+      }
+
+      .resume-section iframe {
+        width: 100%;
+        height: 90vh;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
+      @media screen and (max-width: 900px) {
+        .portfolio-container {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 60px 30px;
+        }
+
+        .right-section {
+          margin-top: 30px;
+          align-self: center;
+        }
+
+        .about-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .about-image img {
+          width: 200px;
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+   <nav>
+      <div class="nav__content">
+        <div class="logo"><a href="#">DASARI SUSHMITHA</a></div>
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="portfolio-container" id="home">
+      <div class="left-section">
+        <h4>Hello, I’m Sushmitha</h4><br>
+        <h1>
+          <span>Transforming ideas into impactful digital solutions</span>
+          <span>Where creativity meets functionality</span>
+          <span>and innovation drives design.</span>
+        </h1>
+        <p>Web Developer | Python Enthusiast</p>
+      </div>
+    </section>
+    <section class="scroll-section" id="about">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <div class="about-text">
+          <p>
+            I am Dasari Sushmitha, a passionate and curious tech explorer. I have experience building projects like Driver drowsiness detection and AI-Enabled Event Ticketing & Access control System. I’m also a web developer with a strong eye for design and functionality. Outside of tech, I enjoy playing kabaddi and participated in hackathons. A passionate developer blending creativity with code—turning complex ideas into elegant web experiences and smart Python-powered solutions.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="pic2.jpg" alt="Sushmitha profile photo">
+        </div>
+      </div>
+    </section>
+<section class="scroll-section" id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill-box">Python</div>
+        <div class="skill-box">HTML & CSS</div>
+        <div class="skill-box">DBMS</div>
+        <div class="skill-box">Java</div>
+        <div class="skill-box">MySQL</div>
+        <div class="skill-box">C programming</div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="section__container">
+        <div class="content">
+          <h2>Contact Me</h2>
+          <p>📧 Email: <a href="mailto:sushmitha@example.com">sushmitha@example.com</a></p>
+          <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/sushmitha-profile" target="_blank">linkedin.com/in/sushmitha-profile</a></p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
