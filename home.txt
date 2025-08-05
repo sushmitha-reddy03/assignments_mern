@@ -12,8 +12,6 @@
       background: linear-gradient(to top, #FFEFBA, #ffffff, #87CEFA);
       position: relative;
     }
-
-    /* Static sun on top of mountains */
     .sun {
   width: 150px;
   height: 150px;
@@ -222,35 +220,29 @@
   <div class="sky">
     <!-- Sun placed statically above mountains -->
     <div class="sun"></div>
-
-    <!-- Mountains -->
     <div class="mountain mountain1"></div>
     <div class="mountain mountain2"></div>
     <div class="mountain mountain3"></div>
-
-    <!-- Clouds (static) -->
     <div class="cloud" style="top: 60px; left: 100px;"></div>
     <div class="cloud" style="top: 120px; left: 300px;"></div>
     <div class="cloud" style="top: 90px; left: 500px;"></div>
     <div class="cloud" style="top: 150px; left: 700px;"></div>
     <div class="cloud" style="top: 70px; left: 900px;"></div>
-
-    <!-- Birds -->
     <div class="bird" style="animation-delay: 0s;"></div>
     <div class="bird" style="top: 150px; animation-delay: 3s;"></div>
     <div class="bird" style="top: 200px; animation-delay: 6s;"></div>
 
-    <!-- Grass + River -->
+    
     <div class="grass"></div>
     <div class="river"></div>
 
-    <!-- Boat + Ducks -->
+    
     <div class="boat"></div>
     <div class="duck duck1"></div>
     <div class="duck duck2"></div>
     <div class="duck duck3"></div>
 
-    <!-- House -->
+  
     <div class="house">
       <div class="roof"></div>
       <div class="walls">
@@ -264,3 +256,4 @@
   </div>
 </body>
 </html>
+
