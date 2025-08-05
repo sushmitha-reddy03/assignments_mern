@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sun Above the Mountains</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; font-family: sans-serif; }
+
+    .sky {
+      height: 100vh;
+      background: linear-gradient(to top, #FFEFBA, #ffffff, #87CEFA);
+      position: relative;
+    }
+
+    /* Static sun on top of mountains */
+    .sun {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #FFD700 40%, #FFA500 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 40px;       /* From top of the page */
+  right: 60px;     /* Right side */
+  z-index: 2;
+    }
+
+    .mountain {
+      position: absolute;
+      bottom: 20vh;
+      width: 0;
+      height: 0;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-bottom: 200px solid #556B2F;
+      z-index: 1;
+    }
+
+    .mountain1 { left: 65%; }
+    .mountain2 { left: 78%; }
+    .mountain3 { left: 90%; }
+
+    .cloud {
+      width: 120px;
+      height: 60px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 6;
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: '';
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .cloud::before {
+      width: 80px;
+      height: 80px;
+      top: -20px;
+      left: 20px;
+    }
+
+    .cloud::after {
+      width: 60px;
+      height: 60px;
+      top: 0;
+      left: 60px;
+    }
+
+    .grass {
+      width: 100%;
+      height: 20vh;
+      background: repeating-linear-gradient(-45deg, #2e8b57, #2e8b57 10px, #228B22 10px, #228B22 20px);
+      position: absolute;
+      bottom: 0;
+      z-index: 3;
+    }
+
+    .river {
+      width: 100%;
+      height: 80px;
+      background: linear-gradient(to right, #00bfff, #1e90ff);
+      position: absolute;
+      bottom: 10vh;
+      z-index: 4;
+      clip-path: polygon(0 60%, 10% 40%, 20% 50%, 30% 45%, 40% 55%, 50% 50%, 60% 60%, 70% 45%, 80% 50%, 90% 40%, 100% 60%, 100% 100%, 0 100%);
+    }
+
+    .boat {
+      width: 60px;
+      height: 20px;
+      background: #8B4513;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      position: absolute;
+      left: 30%;
+      bottom: 11vh;
+      transform: translateX(-50%);
+      z-index: 5;
+      animation: floatBoat 6s ease-in-out infinite;
+    }
+
+    @keyframes floatBoat {
+      0%, 100% { bottom: 11vh; }
+      50% { bottom: 12vh; }
+    }
+
+    .duck {
+      width: 30px;
+      height: 20px;
+      background: yellow;
+      border-radius: 50% 50% 40% 40%;
+      position: absolute;
+      z-index: 5;
+    }
+
+    .duck::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: orange;
+      border-radius: 50%;
+      top: 5px;
+      left: -8px;
+    }
+
+    .duck1 { left: 48%; bottom: 10vh; animation: swim 8s linear infinite; }
+    .duck2 { left: 52%; bottom: 12vh; animation: swim 10s linear infinite reverse; }
+    .duck3 { left: 50%; bottom: 11vh; animation: swim 12s linear infinite; }
+
+    @keyframes swim {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(20px); }
+      100% { transform: translateX(0); }
+    }
+
+    .house {
+      position: absolute;
+      bottom: 20vh;
+      left: 10%;
+      transform: translateX(-50%);
+      z-index: 4;
+    }
+
+    .roof {
+      width: 240px;
+      height: 0;
+      border-left: 120px solid transparent;
+      border-right: 120px solid transparent;
+      border-bottom: 100px solid #8B0000;
+    }
+
+    .walls {
+      width: 240px;
+      height: 180px;
+      background-color: #D2691E;
+      position: relative;
+    }
+
+    .door {
+      width: 50px;
+      height: 90px;
+      background-color: #654321;
+      position: absolute;
+      bottom: 0;
+      left: 95px;
+    }
+
+    .window {
+      width: 40px;
+      height: 40px;
+      background-color: #ADD8E6;
+      border: 2px solid #000;
+      position: absolute;
+    }
+
+    .window.left { top: 30px; left: 20px; }
+    .window.right { top: 30px; right: 20px; }
+    .window.top { top: 90px; left: 20px; }
+    .window.top-right { top: 90px; right: 20px; }
+
+    .bird {
+      width: 40px;
+      height: 20px;
+      position: absolute;
+      background: transparent;
+      top: 100px;
+      left: -50px;
+      animation: fly 15s linear infinite;
+      z-index: 6;
+    }
+
+    .bird::before,
+    .bird::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2px solid black;
+      border-radius: 50%;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      background: transparent;
+    }
+
+    .bird::before { transform: rotate(-45deg); left: 0; }
+    .bird::after { transform: rotate(45deg); right: 0; }
+
+    @keyframes fly {
+      0% { left: -60px; top: 100px; }
+      50% { top: 80px; }
+      100% { left: 110%; top: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sky">
+    <!-- Sun placed statically above mountains -->
+    <div class="sun"></div>
+
+    <!-- Mountains -->
+    <div class="mountain mountain1"></div>
+    <div class="mountain mountain2"></div>
+    <div class="mountain mountain3"></div>
+
+    <!-- Clouds (static) -->
+    <div class="cloud" style="top: 60px; left: 100px;"></div>
+    <div class="cloud" style="top: 120px; left: 300px;"></div>
+    <div class="cloud" style="top: 90px; left: 500px;"></div>
+    <div class="cloud" style="top: 150px; left: 700px;"></div>
+    <div class="cloud" style="top: 70px; left: 900px;"></div>
+
+    <!-- Birds -->
+    <div class="bird" style="animation-delay: 0s;"></div>
+    <div class="bird" style="top: 150px; animation-delay: 3s;"></div>
+    <div class="bird" style="top: 200px; animation-delay: 6s;"></div>
+
+    <!-- Grass + River -->
+    <div class="grass"></div>
+    <div class="river"></div>
+
+    <!-- Boat + Ducks -->
+    <div class="boat"></div>
+    <div class="duck duck1"></div>
+    <div class="duck duck2"></div>
+    <div class="duck duck3"></div>
+
+    <!-- House -->
+    <div class="house">
+      <div class="roof"></div>
+      <div class="walls">
+        <div class="door"></div>
+        <div class="window left"></div>
+        <div class="window right"></div>
+        <div class="window top"></div>
+        <div class="window top-right"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
