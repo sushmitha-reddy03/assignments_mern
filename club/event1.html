@@ -1,82 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/ac42c3b1f7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" href="aboutus.png">
-    <title>Drone Club</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        *{
-            margin: 0px;
-            padding:0px;
-        }
-        </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone Workshop Report</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.8;
+      background: #000;
+      color: #f5f5f5;
+      font-size: 1.1rem;
+    }
+    header, footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      border-bottom: 2px solid #ff6600;
+      margin-bottom: 30px;
+    }
+    header img {
+      height: 90px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      color: #ff6600;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #ff6600;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+    h3 {
+      color: #ff6600;
+      margin-top: 20px;
+    }
+    section {
+      margin-bottom: 40px;
+      background: rgba(17, 17, 17, 0.95);
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid #ff6600;
+      box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+    }
+    p, li {
+      font-size: 1.15rem;
+      color: #ddd;
+    }
+    span {
+      color: #ff6600;
+      font-weight: bold;
+    }
+    .images {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 20px;
+    }
+    .images img {
+      width: 450px;
+      max-width: 95%;
+      border-radius: 12px;
+      border: 3px solid #ff6600;
+      box-shadow: 0 0 25px rgba(255, 102, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .images img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(255, 102, 0, 0.9);
+    }
+    footer {
+      border-top: 2px solid #ff6600;
+      margin-top: 40px;
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+    .signatures {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .sign-box {
+      margin: 15px;
+    }
+    .sign-box strong {
+      color: #ff6600;
+    }
+  </style>
 </head>
-<body class="pl-5">
-    <div class="pt-3 text-center main2">
-        <h1>Sky Tech Session</h1>
-    </div>
-    <h2>Poster of The Event : </h2>
-    <div><img src="event1.png"/></div>
-    <p class="pt-3">
-        <span>Date:</span> 3RD JANUARY 2024<br>
-        <span>Time:</span> 10:00 AM- 4:00 PM<br>
-        <span>Venue:</span> D Block Seminar Hall
-    </p>
-    <p>
-        <span>Speaker:</span> Sravan Kumar Puvvala, Drone Instructor, Marut Drone Academy<br>
-        <span>Speaker:</span> Ms. Saraswati, Marut Drone Academy<br>
-    </p>
-    <p>
-        <span>No. of Registrations:</span>  140<br>
-        <span>No. of Participants:</span> 135
-    </p>
-  <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content:center;">  
-    <div><p>
-        <span>Objective:</span>To provide participants with comprehensive insights into drone technologies and their practical applications in agriculture, showcasing Marut Drone's innovative solutions. 
-        The workshop aims to bridge theoretical knowledge and hands-on experience by combining informative seminars with a practical session, allowing participants to witness real-life drone operations, 
-        including flying and interacting with cutting-edge agricultural drone technology.</p></div>
+<body>
 
-     <div><p>  <span>Event Description:</span>
-    A 1-day workshop on drones in conjunction with Marut Drone Academy which involved two divisions of the workshop, 
-    first half being a seminar where the speakers presented to the participants about drone technologies and how Marut 
-    Drone has solved real life problems in agriculture with the use of drone, and the second half included taking participants 
-    to the ground and flying real drones and also letting the participants fly them and also showcased a drone capable of irrigating farms
-    </p></div>
-</div>
-    <h2>Pre-Lunch</h2>
-    <h2>Summary</h2>
-    <ul class="pl-3">
-        <li>The morning session set the stage for an immersive exploration of drone technologies, featuring engaging speakers who delivered a rich dose of theoretical knowledge.</li>
-          <li>Participants delved into the world of drones, with a focus on Marut Drones, witnessing firsthand how these innovative technologies solve real-world agricultural challenges. </li>
-          <li>The pre-lunch phase provided a solid foundation for the practical experiences that awaited in the afternoon.  </li>
-    </ul><br><br>
-          <h2>Post-Lunch</h2>
-      <h2>Summary</h2>
-      <ul class="pl-3">
-        <li>Following a satisfying break, the post-lunch session shifted gears, offering participants a hands-on experience with drones.</li>
-        <li>Speakers demonstrated various drone models, explained calibration processes, and invited participants to take the controls. </li>
-        <li>This interactive segment not only demystified drone operations but also allowed attendees to fly drones, bridging the gap between theory and practice. </li>
-        <li>The post-lunch session enriched participants' understanding of drone applications, making the event a comprehensive and engaging learning experience.</li>
-      </ul><br><br>
-           <h1>Conclusion:</h1>
-      <p>The one-day workshop on drones, in collaboration with Marut Drone Academy, 
-        successfully achieved its objectives by enlightening participants about the 
-        transformative impact of drone technologies. From insightful seminars elucidating 
-        the prowess of Marut Drones in solving real-world challenges to the exhilarating 
-        hands-on experience of flying drones, the event fostered a deeper understanding 
-        of the role drones play in modern agriculture. As participants engaged in practical 
-        demonstrations, including the demonstration of a drone capable of irrigating farms, 
-        they gained firsthand experience and appreciation for the innovative solutions Marut Drone offers. 
-        The event not only educated but also inspired participants, paving the way for continued 
-        exploration and adoption of drone technologies in the agricultural landscape.</p>
+<header>
+  <img src="sn.png" alt="Drone Club Logo">
+  <h1>Drone Club</h1>
+  <p>Report on “Drone Workshop”</p>
+</header>
+
+
+<main>
+  <section>
+<img src="e1p10.png" alt="Poster">
+  <h1>Poster</h1>
+
+    <h2>Event Details</h2>
+    <p><span>Date:</span> 30th July 2024</p>
+    <p><span>Time:</span> 10:00 AM – 4:00 PM</p>
+    <p><span>Venue:</span> D Block Seminar Hall</p>
+    <p><span>Speakers:</span> Team “We Got Rizz”, E. Kishan Karthik</p>
+    <p><span>No. of Registrations:</span> 120 &nbsp; | &nbsp; <span>No. of Participants:</span> 75</p>
+  </section>
+
+  <section>
+    <h2>Objective</h2>
+    <p>To provide participants with comprehensive insights into drone technologies and their practical applications in agriculture, showcasing Wegrotis and Drone Club drones. The workshop aimed to bridge theoretical knowledge and hands-on experience by combining informative seminars with a practical session, allowing participants to witness real-life drone operations, including flying and interacting with drone technology.</p>
+  </section>
+
+  <section>
+    <h2>Event Description</h2>
+    <p>A 1-day workshop on drones in conjunction with ER, which involved two divisions: the first half was a seminar where the speakers presented on drone technologies and how drones solve real-world problems across sectors. The second half included practical sessions where participants flew real drones, including a demonstration at the cricket ground.</p>
+  </section>
+
+  <section>
+    <h2>Pre-Lunch Summary</h2>
+    <p>The morning session set the stage for an immersive exploration of drone technologies, featuring engaging speakers who delivered a rich dose of theoretical knowledge. Participants witnessed how innovative technologies solve real-world challenges, providing a solid foundation for the afternoon’s practical sessions.</p>
+    <h3>Snaps from Pre-Lunch Session</h3>
+    <div class="images">
+      <img src="e1p1.jpg" alt="Pre-Lunch Photo 1">
+      <img src="e1p2.jpg" alt="Pre-Lunch Photo 2">
+      <img src="e1p3.jpg" alt="Pre-Lunch Photo 3">
+    </div>
+  </section>
+
+  <section>
+    <h2>Post-Lunch Summary</h2>
+    <p>Following the break, participants engaged in hands-on drone experiences. Speakers demonstrated drone models, explained calibration processes, and invited participants to fly drones themselves. This interactive segment bridged the gap between theory and practice, enriching their understanding of drone applications.</p>
+    <h3>Snaps from Post-Lunch Session</h3>
+    <div class="images">
+      <img src="e1p4.jpg" alt="Post-Lunch Photo 1">
+      <img src="e1p5.jpg" alt="Post-Lunch Photo 2">
+      <img src="e1p6.jpg" alt="Post-Lunch Photo 3">
+      <img src="e1p7.jpg" alt="Post-Lunch Photo 3">
+      <img src="e1p8.jpg" alt="Post-Lunch Photo 3">
+      <img src="e1p9.jpg" alt="Post-Lunch Photo 3">
+    </div>
+  </section>
+
+  <section>
+    <h2>Conclusion</h2>
+    <p>The one-day workshop on drones, in collaboration with “We Got Rizz” team (winners of Tech Hack #3), successfully achieved its objectives by enlightening participants about the transformative impact of drone technologies. From insightful seminars to hands-on flying, the event fostered a deeper understanding of drones in agriculture and other sectors. Participants also engaged in a quiz, making the event both educational and interactive. The workshop inspired continued exploration and adoption of drone technologies in real-world applications.</p>
+  </section>
+</main>
+
+<footer>
+  <p>© 2024 Drone Club, Anurag University</p>
+</footer>
+
 </body>
 </html>
