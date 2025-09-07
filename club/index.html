@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+
+      /* 🔥 Global drone background */
+      background: url('dribble.gif') no-repeat center center fixed;
+      background-size: cover;
+    }
+    nav {
+      background: rgba(0, 0, 0, 0.85);
+      color: #ff6600;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+    nav .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ff6600;
+      text-shadow: 0 0 10px #ff6600;
+    }
+
+    /* Home Section */
+    #home {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+    #home::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    #home h1, #home p {
+      position: relative;
+      z-index: 1;
+    }
+    #home h1 {
+      font-size: 3rem;
+      color: #ff6600;
+      margin-bottom: 20px;
+    }
+    #home p {
+      font-size: 1.2rem;
+      max-width: 900px;
+      line-height: 1.8;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7); /* overlay for readability */
+      border-radius: 10px;
+      margin: 20px;
+    }
+    section h2 {
+      color: #ff6600;
+      margin-bottom: 20px;
+    }
+
+    /* About Us */
+    #about .btn {
+      background: #ff6600;
+      border: none;
+      color: #fff;
+      padding: 12px 25px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    #about .btn:hover {
+      background: #fff;
+      color: #ff6600;
+    }
+    .about-content {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+   /* Members */ .members { 
+display: flex; 
+flex-wrap: wrap; 
+justify-content: center; 
+gap: 20px;
+ } 
+.member-card {
+background: #111; 
+padding: 20px; 
+border: 1px solid #ff6600; 
+border-radius: 10px; 
+width: 200px; 
+text-align: center; 
+box-shadow: 0 0 12px rgba(255, 102, 0, 0.4);
+} 
+.member-card img { 
+width: 100%; 
+height: 200px; 
+object-fit: cover; 
+border-radius: 10px; 
+margin-bottom: 10px; 
+}
+    /* Mentor */
+    #mentor img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 3px solid #ff6600;
+      margin-bottom: 15px;
+    }
+
+   /* Events */
+.events {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 15px;
+  overflow-x: auto;   /* allows scroll if too many events */
+  padding: 10px;
+  scrollbar-width: thin; /* nicer scrollbar */
+}
+
+.event-card {
+  flex: 0 0 220px;  /* fixed width so they fit in one line */
+  background: #111;
+  padding: 15px;
+  border: 1px solid #ff6600;
+  border-radius: 10px;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+}
+
+.event-card h3 {
+  color: #ff6600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.event-card p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+/* TEAM */
+    #team img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #ff6600;
+      margin-bottom: 15px;
+    }
+
+
+
+    /* Contact */
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    #contact input, #contact textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ff6600;
+      border-radius: 5px;
+      background: #111;
+      color: #fff;
+    }
+    #contact button {
+      background: #ff6600;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    #contact button:hover {
+      background: #fff;
+      color: #ff6600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.85);
+      color: #888;
+      font-size: 0.9rem;
+      border-top: 1px solid #ff6600;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="sn.png" alt="Drone Club Logo">
+      <strong>DRONE CLUB</strong>
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#members">Members</a></li>
+      <li><a href="#mentor">Mentor</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <section id="home">
+    <h1>Welcome to DRONE CLUB</h1>
+    <p>
+      The Drone Club is the hub of creativity, engineering, and innovation in our college. 
+      We are a passionate group of students dedicated to exploring drones, aerial robotics, and AI-driven flight systems. 
+      From drone building and coding workshops to aerial photography, racing, and research projects, our mission is to empower students with the skills of tomorrow.  
+      <br><br>
+      Whether you’re a beginner curious about drones or a tech enthusiast eager to dive into advanced projects, 
+      the Drone Club is the perfect place to learn, innovate, and fly high. 🚁
+    </p>
+  </section>
+
+  <!-- About Us -->
+  <section id="about">
+    <h2>About Us</h2>
+    <button class="btn" onclick="showAbout('vision')">Vision</button>
+    <button class="btn" onclick="showAbout('mission')">Mission</button>
+    <button class="btn" onclick="showAbout('motto')">Motive</button>
+    <div class="about-content" id="aboutContent">
+      Click the buttons above to explore more about us!
+    </div>
+  </section>
+
+  <!-- Members -->
+  <section id="members">
+    <h2>Our Members</h2>
+    <div class="members">
+      <div class="member-card">
+        <img src="president .jpg" alt="President">
+        <h3>M.Vyshnavi</h3>
+        <h4>[President]</h4>
+      </div>
+      <div class="member-card">
+        <img src="Secretary .jpg" alt="Secretary">
+        <h3> J.Sirivarshini</h3>
+        <h4>[Secretary]</h4>
+      </div>
+      <div class="member-card">
+        <img src="vp.jpg" alt="Vice President-Public relations">
+        <h3>E.Anjan Reddy </h3>
+        <h5>[Vice President-Public relations]</h5>
+      </div>
+      <div class="member-card">
+        <img src="Treasurer .jpg" alt="Treasurer">
+        <h3>P.Sri Sravya </h3>
+        <h4>[Treasurer]</h4>
+      </div>
+      <div class="member-card">
+        <img src="affu1.jpg" alt="Web-Lead">
+        <h3>Mohammad Afthab</h3>
+        <h4>[Web-Lead]</h4>
+      </div>
+      <div class="member-card">
+        <img src="Sm lead.jpg" alt="Social-Media lead">
+        <h3>Shreedha</h3>
+        <h4>[Social-Media lead]</h4>
+           </div>
+      <div class="member-card">
+        <img src="OL.jpg" alt="Organising lead">
+        <h3>M.Jithendra</h3>
+        <h4>[Organising lead]</h4>
+      </div>
+<div class="member-card">
+        <img src="vpt.jpg" alt="Vice President-Technical & education">
+        <h3>E.Kishan Karthik</h3>
+        <h5>[Vice President-Technical & education]</h5>
+      </div>  
+<div class="member-card">
+        <img src="demo.png" alt="Vice President-Membership">
+        <h3> Manish Solomon</h3>
+        <h5>[Vice President-Membership]</h5>
+      </div>  
+  <!-- Faculty Co-Ordinator -->
+  <section id="mentor">
+    <h2>Dr. G. Balram</h2>
+    <img src="mentor.jpg" alt="Mentor">
+<h2> Our Faculty Co-Ordinator</h2>
+    <p>Dr. G. Balram received a Ph.D. in Computer Science and Engineering with a major specialization on Internet of Things from KL Deemed to be University. He is working as an Assistant Professor in the Department of CSE Since 2012. He is the facilitator at the Internet of Things Technical Club under the CSE Department and Innovation an active member of CSI Hyderabad Chapter. He is acting as Single Point of Contact for Smart India Hackathon. He is received “Best Educationalist” Award from International Institute for Education and Management, New Delhi and he also received “Inspire Faculty” Award from Infosys Limited, Hyderabad. He is having one patent and two copy rights.</p>
+  </section>
+
+  <!-- Events -->
+  <section id="events">
+    <h2>Upcoming and Past Events & Projects</h2>
+    <div class="events">
+      <div class="event-card">
+        <h3>🚀 Drone Tech Workshop
+ (6th Nov 2023)</h3>
+        <p>An event encouraging the learning with an intellect speaker invited, who is a drone pilot from the aggrotech. A wonderful workshop including a Handson session with a proper in detail view of drone parts is provided as a learning base. Overview of sprinkler drones and it's usage in the agriculture is showcased.</p>
+<a href="event1.html">More</a>
+      </div>
+      <div class="event-card">
+        <h3>🛠 Sky Tech Session</h3>
+<h3>(3rd Jan 2024)</h3>
+        <p>A 1-day workshop on drones in conjunction with Marut Drone Academy which involved two divisions of the workshop, first half being a seminar where the speakers presented to the participants about drone technologies and how Marut Drone has solved real life problems in agriculture with the use of drone, and the second half included taking participants to the ground and flying real drones and also letting the participants fly them and also showcased a drone capable of irrigating farms</p>
+ <a href="event2.html">More</a>
+      </div>
+ <div class="event-card">
+        <h3>🛠 Drone Hack</h3>
+<h3>(28th to 30th June 2024)</h3>
+        <p>An engaging three-day event titled “DRONE HACK” was organized by the Computer Science Engineering department, focusing on bridging theoretical knowledge with practical drone technology. The event included a boot camp and a 36-hour hackathon where 70 participants learned drone basics, assembled UAVs, calibrated sensors, and developed innovative drone projects. Hands-on sessions covered drone parts, calibration techniques, and problem-solving related to drone applications. By the end, participants demonstrated functional prototypes and gained valuable skills in drone assembly, navigation, and project development, supported by expert mentoring to encourage further innovation in drone technology.</p>
+ <a href="event4.html">More</a>
+      </div>
+ <div class="event-card">
+        <h3>🛠 Hover Connects </h3> 
+<h3>(20th & 21st Dec 2024)</h3>
+        <p>An interactive workshop designed to spark curiosity in IoT and drone technology. Expert speakers, including a professional drone pilot from Agrotech, shared real-world insights. The sessions combined theory with engaging hands-on activities, giving participants a detailed look at drone parts and their functions. A special focus was placed on agricultural applications, with an overview of sprinkler drones and their role in modern farming practices.</p>
+ <a href="event3.html">More</a>
+      </div>
+
+
+      </div>
+  </section>
+<!-- TEAM OF DRONE CLUB -->
+  <section id="team">
+    
+    <img src="sky4.jpg" alt="Team">
+
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>You can reach out to us via the following platforms:</p>
+  <div class="contact-links">
+    <a href="https://www.instagram.com/droneclub_au/" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="mailto:droneclub@anurag.edu.in">
+  <i class="fas fa-envelope"></i> Email
+</a>
+    <a href="https://www.linkedin.com/in/drone-club-au-7a63a92a6/" target="_blank">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+  </div>
+</section>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  #contact {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  #contact h2 {
+    margin-bottom: 20px;
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .contact-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  .contact-links a:hover {
+    background: #444;
+  }
+  .contact-links i {
+    font-size: 20px;
+  }
+</style>
+  <footer>
+    © 2025 Drone Club | All Rights Reserved
+  </footer>
+
+  <script>
+    function showAbout(type) {
+      const content = document.getElementById("aboutContent");
+      if (type === "vision") {
+        content.innerHTML = `
+          <strong>Our Vision</strong><br>
+          To become a leading hub for drone technology, fostering creativity, 
+          innovation, and research that shapes the future of aerial robotics.<br><br>
+          We aim to inspire students to use drone technology for positive social, 
+          environmental, and industrial impact. 🌍
+        `;
+      } else if (type === "mission") {
+        content.innerHTML = `
+          <strong>Our Mission</strong><br>
+          • Provide hands-on experience in drone building and programming.<br>
+          • Organize workshops, competitions, and hackathons.<br>
+          • Collaborate with industries and research institutions.<br>
+          • Prepare students for careers in UAVs, robotics, and AI.
+        `;
+      } else if (type === "motto") {
+        content.innerHTML = `
+          <strong>Our Motive</strong><br>
+          "Learn, Innovate, and Fly High 🚀"
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
